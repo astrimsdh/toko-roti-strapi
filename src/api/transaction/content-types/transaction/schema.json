@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transactions",
+  "info": {
+    "singularName": "transaction",
+    "pluralName": "transactions",
+    "displayName": "transactions",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "transaction_id": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "total": {
+      "type": "decimal"
+    },
+    "transaction_details": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::transaction-detail.transaction-detail",
+      "mappedBy": "transaction_id"
+    }
+  }
+}

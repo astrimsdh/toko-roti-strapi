@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "purchasings",
+  "info": {
+    "singularName": "purchasing",
+    "pluralName": "purchasings",
+    "displayName": "purchasings"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "purchasing_id": {
+      "type": "string"
+    },
+    "product_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "purchasings"
+    },
+    "date": {
+      "type": "date"
+    },
+    "purchasing_price": {
+      "type": "decimal"
+    },
+    "quantity": {
+      "type": "integer"
+    }
+  }
+}
